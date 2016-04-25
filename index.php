@@ -11,8 +11,34 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        test
-        // put your code here
+        //The database name is "poti"
+        //The table name is "flights"
+        
+        //The username to access the database is "potiro"
+        //The password to access the database is "pcXZb(kL"
+
+        $link = mysql_connect("rerun",'potiro','pcXZb(kL');
+        if(!$link)
+              die ("Error");
+        mysql_select_db("poti", $link);
+        
+        $query_string = "select * from flights";
+        $result = mysql_query($query_string);
+        
+        $num_rows = mysql_num_rows($result);
+        if($num_rows > 0)
+        {
+         print "<table border =0>";
+         while ($row = mysql_fetch_row($result))
+         {
+             print "<tr>\n";
+             foreach ($row as $field)
+                 print "\t<td>$field</td>\n";
+             print "</tr>";
+         }
+         print "</table>";
+        }
+        mysql_close($link);
         ?>
     </body>
 </html>
