@@ -8,6 +8,8 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="js/searchflight.js" type="text/javascript"></script>
         <title></title>
     </head>
     <body>
@@ -18,8 +20,15 @@ and open the template in the editor.
                 <a class="navbar-brand" href="searchflight.php">Search Flight</a>
             </nav>
         </div>
-        <div id="home">
-            <p>Welcome to Assignment 1 Internet Programming</p>
+        <div class="form-group" id="search-flight">
+            <h2>Search Flight</h2>
+            <div class="col-lg-4">
+                <input class="form-control" type="text" name="flight-from" id="flight-from" placeholder="Flight From">
+            </div>
+                <div class="col-lg-4">
+            <input class="form-control" type="text" name="flight-to" id="flight-to" placeholder="Flight To">
+            </div>
+            <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-search"></i></button>
         </div>
         <?php
         // put your code here
