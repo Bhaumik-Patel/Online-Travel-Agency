@@ -31,6 +31,7 @@ and open the template in the editor.
             <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-search"></i></button>
         </div>
         <?php
+        
         // put your code here
         ?>
     </body>
