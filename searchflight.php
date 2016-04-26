@@ -24,11 +24,22 @@ and open the template in the editor.
             <h2>Search Flight</h2>
             <div class="col-lg-4">
                 <input class="form-control" type="text" name="flight-from" id="flight-from" placeholder="Flight From">
+                <div id="flight-from-list">
+                    <ul class="list-group"></ul>
+                </div>
             </div>
                 <div class="col-lg-4">
             <input class="form-control" type="text" name="flight-to" id="flight-to" placeholder="Flight To">
+            <div id="flight-to-list">
+                    <ul class="list-group"></ul>
+                </div>
             </div>
-            <button class="btn btn-default" type="button" id="search"><i class="glyphicon glyphicon-search"></i></button>
+            <button class="btn btn-default" type="button" id="search-flight-btn"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+        <div class="form-group col-md-8" id="search-result">
+            <table class="table table-striped">
+            </table>
+            <button class="btn btn-default" type="button" id="book-select-flight">Book Selected Flight</button>
         </div>
         <?php
         
