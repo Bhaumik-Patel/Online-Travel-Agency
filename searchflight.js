@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $('#book-select-flight').hide();
+    
     $('#flight-from').keyup(function () {
        $('#flight-from-list ul').empty(); 
        var from = $('#flight-from').val();
@@ -51,6 +53,7 @@ $(document).ready(function () {
     })
     
     $('#search-flight-btn').on("click",function () {
+       $('#book-select-flight').hide(); 
        $('#search-result table').empty(); 
        var to = $('#flight-to').val();
        var from = $('#flight-from').val();
@@ -61,15 +64,27 @@ $(document).ready(function () {
              dataType: 'json',
              async: false,
              success: function (data) {
+               $('#book-select-flight').show();  
                $('#search-result table').append('<tr> <th>FROM</th> <th>TO</th> <th>PRICE</th> <th></th> </tr>');
                $.each(data, function(i, item) {
-                   $('#search-result table').append('<tr> <td>'+data[i][1]+'</td> <td>'+data[i][2]+'</td> <td>'+data[i][3]+'</td> <td><input class="flight-checks" type="checkbox"></td> </tr>');
+                   $('#search-result table').append('<tr> <td id=f'+data[i][0]+'>'+data[i][1]+'</td> <td id=t'+data[i][0]+'>'+data[i][2]+'</td> <td id=p'+data[i][0]+'>'+data[i][3]+'</td> <td><input class="flight-checks" value='+data[i][0]+' type="checkbox"></td> </tr>');
                 });
              }
          });
     });
+    
     $('#search-result table').on('change','input.flight-checks', function() {
         $('#search-result table input.flight-checks').not(this).prop('checked', false);  
     });
+    
+    $('#book-select-flight').on("click",function(){
+        $('.flight-checks:checked').each(function(){
+            var id = $(this).val();
+            var from = $('#f1'+id).text();
+            var to = $('#t'+id).text(); 
+            var price = $('#p'+id).text();
+            alert(price);
+        });  
+    })
 });
 
