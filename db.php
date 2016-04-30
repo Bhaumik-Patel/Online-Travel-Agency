@@ -23,13 +23,13 @@
 //        }
         class db{
             public static function dbconnect(){
-                $link = mysql_connect("rerun.it.uts.edu.au",'potiro','pcXZb(kL');
+                $link = mysql_connect("localhost",'root','');
                 if(!$link)
                       die ("Error");
-                mysql_select_db("poti", $link);
+                mysql_select_db("ip", $link);
                 }
             public static function flightfrom($from){
-                $query_string = "select distinct(from_city) from flights where from_city LIKE '%$from%'";
+                $query_string = "select distinct(from_f) from flights where from_f LIKE '%$from%'";
                 $result = mysql_query($query_string);
                 $num_rows = mysql_num_rows($result);
                 if($num_rows > 0)
@@ -44,7 +44,7 @@
                 return $array;
             }
             public static function flightto($to){
-                $query_string = "select distinct(to_city) from flights where to_city LIKE '%$to%'";
+                $query_string = "select distinct(to_f) from flights where to_f LIKE '%$to%'";
                 $result = mysql_query($query_string);
                 $num_rows = mysql_num_rows($result);
                 if($num_rows > 0)
@@ -60,13 +60,13 @@
             }
             public static function flightall($to,$from){
                 if($to && $from){
-                    $query_string = "select * from flights where to_city = '$to' and from_city ='$from'";
+                    $query_string = "select * from flights where to_f = '$to' and from_f ='$from'";
                 }
                 if(($to && !$from)){
-                    $query_string = "select * from flights where to_city = '$to'";
+                    $query_string = "select * from flights where to_f = '$to'";
                 }
                 if((!$to && $from)){
-                    $query_string = "select * from flights where from_city = '$from'";
+                    $query_string = "select * from flights where from_f = '$from'";
                 }
                 $result = mysql_query($query_string);
                 $num_rows = mysql_num_rows($result);

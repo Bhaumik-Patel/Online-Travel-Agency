@@ -36,13 +36,30 @@ and open the template in the editor.
             </div>
             <button class="btn btn-default" type="button" id="search-flight-btn"><i class="glyphicon glyphicon-search"></i></button>
         </div>
-        <div class="form-group col-md-8" id="search-result">
+        <div class="form-group col-md-12" id="search-result">
+            <div class="form-group col-md-8">
+                <table class="table table-striped">
+                </table>
+                <button class="btn btn-default" style="float: right" type="button" id="book-select-flight">Book Selected Flight</button>
+            </div>
+        </div>    
+        <div class="form-group col-md-8" id="display-book-details1">
+        </div>
+        <div class="form-group col-md-8" id="display-book-details2">
             <table class="table table-striped">
             </table>
-            <button class="btn btn-default" type="button" id="book-select-flight">Book Selected Flight</button>
         </div>
+        <div class="form-group col-md-8" id="display-book-details2">
+            <form id='form1' method="post" action="booking.php">
+                <input id="from_city" name="from_city" type="hidden">
+                <input id="to_city" name="to_city" type="hidden">
+                <input id="price" name="price" type="hidden">
+                <input id="seats" name="seats" type="hidden">
+                <label id="seats-number" style="float: left"></label>
+                <button class="btn btn-default" style="float: right" type="submit" id="add-to-booking">Add to Booking</button>  
+            </form>
+        </div>    
         <?php
-        
         // put your code here
         ?>
     </body>
