@@ -13,14 +13,16 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <div id="navigation" style="text-align: center">
-            <nav class="navbar navbar-light bg-faded">
-                <a class="navbar-brand" href="index.php">Home</a>
-                <a class="navbar-brand" href="booking.php">Your Booking</a>
-                <a class="navbar-brand" href="searchflight.php">Search Flight</a>
+        <div class="col-md-12" style="margin-left: 25%;margin-top: 10px">
+        <div id="navigation" class="col-md-4" style="text-align: center">
+            <nav class="navbar navbar-light bg-faded" style="background-color: #563d7c">
+                <a class="navbar-brand" style="color: white" href="index.php">Home</a>
+                <a class="navbar-brand" style="color: white" href="searchflight.php">Search Flight</a>
+                <a class="navbar-brand" style="color: white" href="booking.php">Your Booking</a>
             </nav>
         </div>
-        <div class="form-group" id="search-flight">
+        </div>  
+        <div class="form-group col-md-12" id="search-flight">
             <h2>Search Flight</h2>
             <div class="col-lg-4">
                 <input class="form-control" type="text" name="flight-from" id="flight-from" placeholder="Flight From">
@@ -43,10 +45,10 @@ and open the template in the editor.
                 <button class="btn btn-default" style="float: right" type="button" id="book-select-flight">Book Selected Flight</button>
             </div>
         </div>    
-        <div class="form-group col-md-8" id="display-book-details1">
+        <div class="form-group col-md-8" id="display-book-details1" >
         </div>
         <div class="form-group col-md-8" id="display-book-details2">
-            <table class="table table-striped">
+            <table class="table table-striped col-md-8">
             </table>
         </div>
         <div class="form-group col-md-8" id="display-book-details2">

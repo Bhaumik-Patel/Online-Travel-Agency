@@ -11,16 +11,20 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <div class="col-md-4" style="margin-left: 25%;margin-top: 10px">
         <div id="navigation" style="text-align: center">
-            <nav class="navbar navbar-light bg-faded">
-                <a class="navbar-brand" href="index.php">Home</a>
-                <a class="navbar-brand" href="booking.php">Your Booking</a>
-                <a class="navbar-brand" href="searchflight.php">Search Flight</a>
+            <nav class="navbar navbar-light bg-faded" style="background-color: #563d7c">
+                <a class="navbar-brand" style="color: white" href="index.php">Home</a>
+                <a class="navbar-brand" style="color: white" href="searchflight.php">Search Flight</a>
+                <a class="navbar-brand" style="color: white" href="booking.php">Your Booking</a>
             </nav>
         </div>
+            
         <div id="home">
-            <p>Welcome to Assignment 1 Internet Programming</p>
+            <p>Assignment#1 for the Internet Programming, University of Technology, Sydney for Autumn semester 2016</p>
+            <p><strong>By Ali Asgher and Bhauwmik Patel</strong></p>
         </div>
+        </div>    
         <?php
         // put your code here
         ?>

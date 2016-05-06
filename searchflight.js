@@ -101,11 +101,11 @@ $(document).ready(function () {
             $('#display-book-details1').append('<div class="col-md-4"><strong>'+price+'</strong></div>');
         
             $('#display-book-details2 table').append('<tr> <th>SEAT</th> <th>ADULT</th> <th>Child</th> <th>Weelchair</th> <th>Special</th> </tr>');
-            $('#display-book-details2 table').append('<tr> <td>Seat</td> <td><input class="seat-checks1" type="checkbox"></td> <td><input class="seat-checks1" type="checkbox"></td> <td><input class="wc-checks1" type="checkbox"></td> <td><input class="special-checks1" type="checkbox"></td> </tr>');
-            $('#display-book-details2 table').append('<tr> <td>Seat</td> <td><input class="seat-checks2" type="checkbox"></td> <td><input class="seat-checks2" type="checkbox"></td> <td><input class="wc-checks2" type="checkbox"></td> <td><input class="special-checks2" type="checkbox"></td> </tr>');
-            $('#display-book-details2 table').append('<tr> <td>Seat</td> <td><input class="seat-checks3" type="checkbox"></td> <td><input class="seat-checks3" type="checkbox"></td> <td><input class="wc-checks3" type="checkbox"></td> <td><input class="special-checks3" type="checkbox"></td> </tr>');
-            $('#display-book-details2 table').append('<tr> <td>Seat</td> <td><input class="seat-checks4" type="checkbox"></td> <td><input class="seat-checks4" type="checkbox"></td> <td><input class="wc-checks4" type="checkbox"></td> <td><input class="special-checks4" type="checkbox"></td> </tr>');
-            $('#display-book-details2 table').append('<tr> <td>Seat</td> <td><input class="seat-checks5" type="checkbox"></td> <td><input class="seat-checks5" type="checkbox"></td> <td><input class="wc-checks5" type="checkbox"></td> <td><input class="special-checks5" type="checkbox"></td> </tr>');
+            $('#display-book-details2 table').append('<tr> <td><img src="images/seat.png" alt=""></td> <td><input class="seat-checks1" type="checkbox"></td> <td><input class="seat-checks1" type="checkbox"></td> <td><input class="wc-checks1" type="checkbox"></td> <td><input class="special-checks1" type="checkbox"></td> </tr>');
+            $('#display-book-details2 table').append('<tr> <td><img src="images/seat.png" alt=""></td> <td><input class="seat-checks2" type="checkbox"></td> <td><input class="seat-checks2" type="checkbox"></td> <td><input class="wc-checks2" type="checkbox"></td> <td><input class="special-checks2" type="checkbox"></td> </tr>');
+            $('#display-book-details2 table').append('<tr> <td><img src="images/seat.png" alt=""></td> <td><input class="seat-checks3" type="checkbox"></td> <td><input class="seat-checks3" type="checkbox"></td> <td><input class="wc-checks3" type="checkbox"></td> <td><input class="special-checks3" type="checkbox"></td> </tr>');
+            $('#display-book-details2 table').append('<tr> <td><img src="images/seat.png" alt=""></td> <td><input class="seat-checks4" type="checkbox"></td> <td><input class="seat-checks4" type="checkbox"></td> <td><input class="wc-checks4" type="checkbox"></td> <td><input class="special-checks4" type="checkbox"></td> </tr>');
+            $('#display-book-details2 table').append('<tr> <td><img src="images/seat.png" alt=""></td> <td><input class="seat-checks5" type="checkbox"></td> <td><input class="seat-checks5" type="checkbox"></td> <td><input class="wc-checks5" type="checkbox"></td> <td><input class="special-checks5" type="checkbox"></td> </tr>');
         
             $('#display-book-details2 table input.wc-checks1').prop('disabled', true);
             $('#display-book-details2 table input.special-checks1').prop('disabled', true);
@@ -211,15 +211,13 @@ $(document).ready(function () {
         if(seats==0)
         {
             alert('Please book alteast 1 seat');
-            $('#display-book-details2 #form1').submit(function(e){
-            e.preventDefault();
-           });
+            return false;
         }
-        else{
+        if(seats>0){
             $('#from_city').val(from_city);
             $('#to_city').val(to_city);
             $('#price').val(price);
-            $('#seats').val(seats);  
+            $('#seats').val(seats);
         }
     })
 });

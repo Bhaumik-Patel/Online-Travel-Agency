@@ -15,14 +15,16 @@ session_start();
         <title></title>
     </head>
     <body>
-        <div id="navigation" style="text-align: center">
-            <nav class="navbar navbar-light bg-faded">
-                <a class="navbar-brand" href="index.php">Home</a>
-                <a class="navbar-brand" href="booking.php">Your Booking</a>
-                <a class="navbar-brand" href="searchflight.php">Search Flight</a>
+        <div class="col-md-12" style="margin-left: 25%;margin-top: 10px">
+        <div id="navigation" class="col-md-4" style="text-align: center">
+            <nav class="navbar navbar-light bg-faded" style="background-color: #563d7c">
+                <a class="navbar-brand" style="color: white" href="index.php">Home</a>
+                <a class="navbar-brand" style="color: white" href="searchflight.php">Search Flight</a>
+                <a class="navbar-brand" style="color: white" href="booking.php">Your Booking</a>
             </nav>
         </div>
-        <div class="form-group" id="search-flight">
+        </div>    
+        <div class="form-group col-md-12" id="search-flight">
             <h2>Your Booking</h2>
         </div>
         
@@ -50,8 +52,14 @@ session_start();
             <table class="table table-striped">
                 <?php if(!empty($_SESSION['FlightDetails'])){
                     $flightsDisplay = array();
-                    $flightsDisplay = $_SESSION['FlightDetails'];
-                    foreach ($flightsDisplay as $flightrow): ?>
+                    $flightsDisplay = $_SESSION['FlightDetails'];?>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Price</th>
+                        <th>Seats</th>
+                    </tr>
+                    <?php foreach ($flightsDisplay as $flightrow): ?>
                         <tr>
                             <td><?php echo $flightrow['from']; ?></td> 
                             <td><?php echo $flightrow['to']; ?></td>
